@@ -3,7 +3,114 @@ import { Calendar, Monitor, Check } from 'lucide-react'
 
 export default function Portfolio() {
   const portfolioItems = [
-
+    {
+      id: 1,
+      title: "社会起業家フォーラム2024",
+      category: "イベント企画・運営",
+      description: "地域課題解決に取り組む起業家100名が参加するイベントを企画・運営",
+      details: [
+        "参加者数: 100名",
+        "期間: 2日間",
+        "会場: 東京国際フォーラム",
+        "協力企業: 10社"
+      ],
+      technologies: [],
+      results: [
+        "新規ビジネスマッチング: 15件",
+        "投資決定案件: 3件",
+        "参加者満足度: 95%"
+      ]
+    },
+    {
+      id: 2,
+      title: "NPO法人○○様 Webサイト",
+      category: "Web制作",
+      description: "活動内容の可視化と寄付者獲得を目的としたサイトを制作",
+      details: [
+        "ページ数: 15ページ",
+        "制作期間: 2ヶ月",
+        "レスポンシブ対応",
+        "CMS導入"
+      ],
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "WordPress"],
+      results: [
+        "月間PV数: 300%向上",
+        "寄付者数: 150%増加",
+        "問い合わせ: 200%増加"
+      ]
+    },
+    {
+      id: 3,
+      title: "ビジネスプランコンテスト",
+      category: "イベント企画・運営",
+      description: "若手起業家のマッチングイベントを企画・運営",
+      details: [
+        "応募者数: 200名",
+        "ファイナリスト: 10組",
+        "審査員: 業界専門家5名",
+        "賞金総額: 500万円"
+      ],
+      technologies: [],
+      results: [
+        "起業実現: 8件",
+        "資金調達成功: 5件",
+        "メディア掲載: 15媒体"
+      ]
+    },
+    {
+      id: 4,
+      title: "地域活性化プロジェクト サイト",
+      category: "Web制作",
+      description: "地方自治体の地域活性化プロジェクトの情報発信サイト",
+      details: [
+        "多言語対応（日英中韓）",
+        "イベント管理機能",
+        "参加者登録システム",
+        "SNS連携"
+      ],
+      technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
+      results: [
+        "観光客増加: 40%",
+        "イベント参加者: 年間3,000名",
+        "地域事業者登録: 150社"
+      ]
+    },
+    {
+      id: 5,
+      title: "社会課題解決アイデアソン",
+      category: "イベント企画・運営",
+      description: "学生と社会人が協力して社会課題解決のアイデアを生み出すワークショップ",
+      details: [
+        "参加者数: 80名（学生・社会人混合）",
+        "チーム数: 16チーム",
+        "期間: 2日間集中型",
+        "メンター: 企業経営者8名"
+      ],
+      technologies: [],
+      results: [
+        "実用化アイデア: 12件",
+        "継続プロジェクト: 5件",
+        "参加者の起業: 3件"
+      ]
+    },
+    {
+      id: 6,
+      title: "スタートアップ企業 コーポレートサイト",
+      category: "Web制作",
+      description: "AIテクノロジーを活用したスタートアップ企業のコーポレートサイト制作",
+      details: [
+        "モダンなデザイン",
+        "技術説明ページ",
+        "投資家向け情報",
+        "採用ページ"
+      ],
+      technologies: ["Next.js", "TypeScript", "Framer Motion", "Vercel"],
+      results: [
+        "資金調達成功: 2億円",
+        "採用応募者: 500%増加",
+        "メディア取材: 20件"
+      ]
+    }
   ]
 
   const eventItems = portfolioItems.filter(item => item.category === "イベント企画・運営")
