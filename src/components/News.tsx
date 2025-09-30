@@ -1,23 +1,11 @@
 export default function News() {
   const newsItems = [
     {
-      date: "2024.03.15",
+      date: "2025-09-12",
       category: "イベント",
-      title: "社会起業家フォーラム2024開催のお知らせ",
+      title: "テスト（準備中）",
       href: "#"
     },
-    {
-      date: "2024.03.01",
-      category: "制作実績",
-      title: "NPO法人○○様のWebサイトを制作いたしました",
-      href: "#"
-    },
-    {
-      date: "2024.02.20",
-      category: "お知らせ",
-      title: "年末年始の営業についてのお知らせ",
-      href: "#"
-    }
   ]
 
   const getCategoryColor = (category: string) => {
