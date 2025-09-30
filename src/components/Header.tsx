@@ -87,22 +87,25 @@ export default function Header() {
         } overflow-hidden bg-black/50 backdrop-blur-sm border-t border-white/20`}
       >
         <nav className="px-4 py-4 space-y-4">
-            <Link href="/meicon" className="text-white hover:text-blue-300 transition-colors font-medium">
+            <Link
+              href="/meicon"
+              onClick={closeMenu}
+              className="block text-white hover:text-blue-300 transition-colors font-medium py-2">
               イベント概要
             </Link>
-            <Link href="/meicon-web" className="text-white hover:text-blue-300 transition-colors font-medium">
+            <Link href="/meicon-web" onClick={closeMenu} className="block text-white hover:text-blue-300 transition-colors font-medium">
               Web制作
             </Link>
-            <Link href="/portfolio" className="text-white hover:text-blue-300 transition-colors font-medium">
+            <Link href="/portfolio" onClick={closeMenu} className="block text-white hover:text-blue-300 transition-colors font-medium">
               実績
             </Link>
-            <Link href="/news" className="text-white hover:text-blue-300 transition-colors font-medium">
+            <Link href="/news" onClick={closeMenu} className="block text-white hover:text-blue-300 transition-colors font-medium">
               お知らせ
             </Link>
-            <Link href="/about" className="text-white hover:text-blue-300 transition-colors font-medium">
+            <Link href="/about" onClick={closeMenu} className="block text-white hover:text-blue-300 transition-colors font-medium">
               会社概要
             </Link>
-            <Link href="/contact" className="text-white hover:text-blue-300 transition-colors font-medium">
+            <Link href="/contact" onClick={closeMenu} className="block text-white hover:text-blue-300 transition-colors font-medium">
               お問い合わせ
             </Link>
         </nav>
