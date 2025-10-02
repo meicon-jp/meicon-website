@@ -171,7 +171,7 @@ export default function MeiconWebPage() {
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3 sm:mb-4 text-center">Meiconでの宣伝・PR</h3>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed text-center">
-                  月1回開催されるMeiconイベントで、スポンサー企業として紹介され、地域での認知度向上が期待できます。
+                  Meiconイベントで、スポンサー企業として紹介され、地域での認知度向上が期待できます。
                 </p>
               </div>
             </AnimatedSection>
