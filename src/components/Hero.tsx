@@ -13,36 +13,33 @@ export default function Hero() {
           className="object-cover animate-slow-zoom"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-800/80 to-slate-900/85 z-10"></div>
+        <div className="absolute inset-0 bg-black/70 z-10"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-20 w-full">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-8 py-20 sm:py-24 md:py-32">
           <div className="text-center">
-            <div className="mb-8">
-              <span className="inline-block px-4 py-2 bg-slate-700 text-white text-sm font-medium rounded-full mb-4">
+            <div className="mb-6 sm:mb-8">
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-700 text-white text-xs sm:text-sm font-medium rounded-full mb-4">
                 名古屋発の地域共創コミュニティ
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight text-white px-4">
               挑戦とつながりを
               <br />
               生み出す場所
             </h1>
 
-            <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed text-slate-200">
-              名古屋で世代や立場を超えて集まり、地域課題やビジネスプランを話し合い共創する
-              <br />
-              市民参加型コミュニティ<br />
-              <span className="font-semibold text-blue-300 text-2xl">Meicon</span>
+            <p className="text-base sm:text-lg md:text-xl mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed text-slate-200 px-4">
+              名古屋で世代や立場を超えて集まり、地域課題やビジネスプランを話し合い<br />共創する市民参加型コミュニティ
             </p>
 
             <div>
               <Link
                 href="/meicon"
-                className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 イベント詳細
               </Link>

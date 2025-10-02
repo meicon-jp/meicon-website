@@ -12,10 +12,6 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   title: "Meicon LLC. - 名古屋の地域共創コミュニティ",
   description: "名古屋で世代や立場を超えて集まり、地域課題やビジネスプランを話し合い共創する市民参加型コミュニティ「Meicon」。イベント企画とWeb制作で挑戦とつながりを生み出します。",
-  icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
-  },
 };
 
 export default function RootLayout({

@@ -35,10 +35,10 @@ export default function AnimatedSection({ children, className = '' }: AnimatedSe
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      className={`transition-all duration-1000 ease-out ${
         isVisible
-          ? 'opacity-100 transform translate-y-0'
-          : 'opacity-0 transform translate-y-8'
+          ? 'opacity-100 transform translate-y-0 scale-100'
+          : 'opacity-0 transform translate-y-16 scale-95'
       } ${className}`}
     >
       {children}
