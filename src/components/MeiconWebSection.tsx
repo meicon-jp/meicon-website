@@ -85,7 +85,7 @@ export default function MeiconWebSection() {
                     <Circle className="text-green-600 w-5 h-5 sm:w-6 sm:h-6 mr-3 sm:mr-4 flex-shrink-0 fill-current mt-1" />
                     <div>
                       <span className="text-base sm:text-lg font-semibold text-slate-800 block">Meiconでの宣伝・PR</span>
-                      <span className="text-sm sm:text-base text-slate-600">月1回開催されるMeiconイベントで、スポンサー企業として紹介され、地域での認知度向上が期待できます。</span>
+                      <span className="text-sm sm:text-base text-slate-600">Meiconイベントで、スポンサー企業として紹介され、地域での認知度向上が期待できます。</span>
                     </div>
                   </div>
                   <div className="flex items-start">
