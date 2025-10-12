@@ -32,7 +32,7 @@ export default function Home() {
                     <Handshake className="text-blue-600 w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">Meiconイベント開催</h3>
+                    <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">Meicon（メイコン）開催</h3>
                     <p className="text-sm sm:text-base text-slate-600">地域課題解決のための共創イベントを定期開催し、様々な立場の方々をつなげます</p>
                   </div>
                 </div>

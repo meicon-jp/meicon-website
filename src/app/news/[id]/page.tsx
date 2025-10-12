@@ -36,12 +36,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!news) {
     return {
-      title: 'お知らせが見つかりません | Meicon LLC.',
+      title: 'お知らせが見つかりません | 合同会社Meicon',
     }
   }
 
   return {
-    title: `${news.title} | Meicon LLC.`,
+    title: `${news.title} | 合同会社Meicon`,
     description: news.content.substring(0, 100).replace(/<[^>]*>/g, ''),
   }
 }

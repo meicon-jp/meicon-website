@@ -37,12 +37,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!portfolio) {
     return {
-      title: '実績が見つかりません | Meicon LLC.',
+      title: '実績が見つかりません | 合同会社Meicon',
     }
   }
 
   return {
-    title: `${portfolio.title} | Meicon LLC.`,
+    title: `${portfolio.title} | 合同会社Meicon`,
     description: portfolio.description,
   }
 }

@@ -1,0 +1,7 @@
+# robots.txt for 合同会社Meicon
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://meicon.jp/sitemap.xml

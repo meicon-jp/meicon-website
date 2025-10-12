@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start mb-6 sm:mb-8">
           {/* Logo and Description */}
           <div className="mb-6 sm:mb-8 md:mb-0">
-            <h3 className="text-xl sm:text-2xl font-bold mb-2">Meicon LLC.</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2">合同会社Meicon</h3>
             <p className="text-sm sm:text-base text-gray-300">社会を変えるアイデアを形に</p>
           </div>
 

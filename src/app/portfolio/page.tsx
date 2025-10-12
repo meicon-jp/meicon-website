@@ -5,8 +5,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Portfolio - 実績 | Meicon LLC.',
-  description: 'Meicon LLC.のイベント企画・運営、Web制作の実績一覧。これまでの活動やプロジェクトをご紹介します。',
+  title: 'Portfolio - 実績 | 合同会社Meicon',
+  description: '合同会社Meiconのイベント企画・運営、Web制作の実績一覧。これまでの活動やプロジェクトをご紹介します。',
 }
 
 export const revalidate = 60 // 60秒ごとに再検証

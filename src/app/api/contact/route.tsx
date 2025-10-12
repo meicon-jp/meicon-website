@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
 
     // Send email to company
     const emailResult1 = await resend.emails.send({
-      from: 'Meicon LLC <noreply@mei-con.jp>',
+      from: '合同会社メイコン <noreply@mei-con.jp>',
       to: ['meicon@mei-con.jp'], // 受信先メールアドレス
       subject: `【お問い合わせ】${subjectMap[subject] || subject}`,
       html: `
@@ -54,12 +54,12 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to user
     const emailResult2 = await resend.emails.send({
-      from: 'Meicon LLC <noreply@mei-con.jp>',
+      from: '合同会社Meicon <noreply@mei-con.jp>',
       to: [email],
-      subject: 'お問い合わせを受け付けました - Meicon LLC',
+      subject: 'お問い合わせを受け付けました - 合同会社Meicon',
       html: `
         <h2>${name} 様</h2>
-        <p>この度は、Meicon LLC へお問い合わせいただき、誠にありがとうございます。</p>
+        <p>この度は、合同会社Meiconへお問い合わせいただき、誠にありがとうございます。</p>
         <p>以下の内容でお問い合わせを受け付けました。</p>
         <hr />
         <p><strong>お問い合わせ種類:</strong> ${subjectMap[subject] || subject}</p>
@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
         <p>2営業日以内に担当者よりご連絡させていただきます。</p>
         <p>今しばらくお待ちください。</p>
         <br />
-        <p>Meicon LLC</p>
+        <p>合同会社Meicon</p>
         <p>Email: meicon@mei-con.jp</p>
       `,
     })

@@ -4,8 +4,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'News - お知らせ | Meicon LLC.',
-  description: 'Meicon LLC.の最新のお知らせ・ニュース一覧。イベント情報、メディア掲載情報などをお届けします。',
+  title: 'News - お知らせ | 合同会社Meicon',
+  description: '合同会社Meiconの最新のお知らせ・ニュース一覧。イベント情報、メディア掲載情報などをお届けします。',
 }
 
 export const revalidate = 60 // 60秒ごとに再検証

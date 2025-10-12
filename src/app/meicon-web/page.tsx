@@ -3,7 +3,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 import { Shield, RefreshCw, Heart, Award, Star, Tent, Bot, Sprout } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Meicon-web - 持続可能Web制作 | Meicon LLC.',
+  title: 'Meicon-web - 持続可能Web制作 | 合同会社Meicon',
   description: 'Webサイト制作を通じてお客様の課題解決に貢献すると同時に、制作費用の一部がMeiconの地域共創活動の運営費に充てられる持続可能なWeb制作サービス。',
 }
 
@@ -11,7 +11,7 @@ export default function MeiconWebPage() {
   return (
     <main className="min-h-screen">
       {/* ヒーローセクション */}
-      <section className="py-16 sm:py-20 md:py-24 pt-20 sm:pt-24 md:pt-28 bg-gray-900 text-white">
+      <section className="py-16 pt-24 sm:py-20 sm:pt-28 bg-gray-900 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
@@ -143,9 +143,10 @@ export default function MeiconWebPage() {
             <AnimatedSection>
               <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-5 sm:p-6 md:p-8 rounded-xl text-center">
                 <h3 className="text-xl sm:text-2xl font-semibold text-slate-800 mb-4 sm:mb-6">スポンサー費<small>（管理運営費込み）</small></h3>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 mb-3 sm:mb-4">2万円/月</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 mb-3 sm:mb-4">2万円/月<small className='text-sm'>※</small></div>
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                  Meiconイベントのスポンサーとして、継続的な地域共創活動をサポートいただきます。
+                  Meiconイベントのスポンサーとして、継続的な地域共創活動をサポートいただきます。<br />
+                  <small>※ドメイン費は別途お客様負担になります。</small>
                 </p>
               </div>
             </AnimatedSection>
@@ -218,8 +219,8 @@ export default function MeiconWebPage() {
                   1
                 </div>
                 <div className="bg-slate-50 p-4 sm:p-5 md:p-6 rounded-xl flex-grow">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-2">ヒアリング・企画提案</h3>
-                  <p className="text-sm sm:text-base text-slate-600">お客様のビジネス目標やご要望を詳しくお聞きし、最適なWebサイトの企画をご提案します。</p>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-2">ヒアリング</h3>
+                  <p className="text-sm sm:text-base text-slate-600">ヒアリングシートを用いてお客様のビジネス目標やご要望を詳しくお聞きし、最適なWebサイトをご提案します。</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -229,8 +230,8 @@ export default function MeiconWebPage() {
                   2
                 </div>
                 <div className="bg-slate-50 p-4 sm:p-5 md:p-6 rounded-xl flex-grow">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-2">デザイン・設計</h3>
-                  <p className="text-sm sm:text-base text-slate-600">ワイヤーフレーム作成からデザインカンプまで、お客様と相談しながら進めていきます。</p>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-2">デモサイト提示</h3>
+                  <p className="text-sm sm:text-base text-slate-600">ヒアリングシートの内容を参考にデモサイトを制作します。デモサイトをご覧いただき、お客様と相談しながら進めていきます。</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -241,7 +242,7 @@ export default function MeiconWebPage() {
                 </div>
                 <div className="bg-slate-50 p-4 sm:p-5 md:p-6 rounded-xl flex-grow">
                   <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-2">開発・実装</h3>
-                  <p className="text-sm sm:text-base text-slate-600">最新の技術を使用してWebサイトを構築し、テスト環境でお客様に確認いただきます。</p>
+                  <p className="text-sm sm:text-base text-slate-600">実際にWebサイトを構築し、完成後にお客様に確認いただきます。</p>
                 </div>
               </div>
             </AnimatedSection>

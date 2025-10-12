@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 import AnimatedSection from '@/components/AnimatedSection'
-import { Users, Check, Circle, Calendar, MapPin, Clock, Target, Heart, Lightbulb } from 'lucide-react'
+import { Users, Circle, Calendar, MapPin, Clock, Target, Heart, Lightbulb } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Meicon - 地域共創イベント | Meicon LLC.',
-  description: '名古屋で世代や立場を超えて集まり、地域課題やビジネスプランを話し合い共創する市民参加型コミュニティイベント「Meicon」の詳細情報。',
+  title: '合同会社Meicon（メイコン） - 地域共創イベント',
+  description: '名古屋で世代や立場を超えて集まり、地域課題やビジネスプランを話し合い共創する市民参加型コミュニティイベント「Meicon（メイコン）」の詳細情報。',
 }
 
 export default function MeiconPage() {
@@ -36,7 +36,7 @@ export default function MeiconPage() {
           <AnimatedSection className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6 px-4">イベント概要</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto mb-4 px-4">
-              Meiconは地域の課題解決とビジネス創出を目的とした共創プラットフォームです
+              Meicon（メイコン）は地域の課題解決とビジネス創出を目的とした共創プラットフォームです
             </p>
             <div className="inline-block bg-yellow-100 border border-yellow-300 text-yellow-800 px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg mx-4">
               <p className="text-sm sm:text-base font-semibold">現在、開催に向けて準備中です</p>
@@ -126,7 +126,7 @@ export default function MeiconPage() {
           <AnimatedSection className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6 px-4">得られる価値</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto px-4">
-              Meiconに参加することで得られるメリット
+              Meicon（メイコン）に参加することで得られるメリット
             </p>
           </AnimatedSection>
 
@@ -168,7 +168,7 @@ export default function MeiconPage() {
           <AnimatedSection className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6 px-4">イベントの流れ</h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto px-4">
-              Meiconの典型的な進行スケジュール
+              Meicon（メイコン）の典型的な進行スケジュール
             </p>
           </AnimatedSection>
 
@@ -179,7 +179,7 @@ export default function MeiconPage() {
                   1
                 </div>
                 <div className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200 flex-grow">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1.5 sm:mb-2">オープニング・自己紹介（30分）</h3>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1.5 sm:mb-2">オープニング・自己紹介</h3>
                   <p className="text-sm sm:text-base text-slate-600">参加者全員で自己紹介を行い、どのような活動や課題に取り組んでいるかを共有します。</p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ export default function MeiconPage() {
                   2
                 </div>
                 <div className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200 flex-grow">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1.5 sm:mb-2">プレゼンテーション（90分）</h3>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1.5 sm:mb-2">プレゼンテーション</h3>
                   <p className="text-sm sm:text-base text-slate-600">各参加者が自身のビジネスプランや活動について10分程度でプレゼンテーションを行います。</p>
                 </div>
               </div>
@@ -201,7 +201,7 @@ export default function MeiconPage() {
                   3
                 </div>
                 <div className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200 flex-grow">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1.5 sm:mb-2">ディスカッション・フィードバック（60分）</h3>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1.5 sm:mb-2">ディスカッション・フィードバック</h3>
                   <p className="text-sm sm:text-base text-slate-600">グループに分かれて各プランについて議論し、改善案や協力可能性について話し合います。</p>
                 </div>
               </div>
@@ -212,7 +212,7 @@ export default function MeiconPage() {
                   4
                 </div>
                 <div className="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200 flex-grow">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1.5 sm:mb-2">ネットワーキング・クロージング（30分）</h3>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-slate-800 mb-1.5 sm:mb-2">ネットワーキング・クロージング</h3>
                   <p className="text-sm sm:text-base text-slate-600">自由な交流時間を設け、具体的な協力関係や次のステップについて個別に話し合います。</p>
                 </div>
               </div>

@@ -1,5 +1,4 @@
 import AnimatedSection from '@/components/AnimatedSection'
-import { Handshake, Monitor, RefreshCw } from 'lucide-react'
 
 export default function About() {
   return (
@@ -31,7 +30,7 @@ export default function About() {
                 <div className="space-y-5 sm:space-y-6">
                   <div>
                     <h3 className="text-base sm:text-lg font-bold text-slate-800 mb-1.5 sm:mb-2">会社名</h3>
-                    <p className="text-sm sm:text-base text-gray-600">Meicon LLC.</p>
+                    <p className="text-sm sm:text-base text-gray-600">合同会社Meicon</p>
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-bold text-slate-800 mb-1.5 sm:mb-2">設立</h3>
@@ -40,8 +39,8 @@ export default function About() {
                   <div>
                     <h3 className="text-base sm:text-lg font-bold text-slate-800 mb-1.5 sm:mb-2">事業内容</h3>
                     <ul className="text-sm sm:text-base text-gray-600 space-y-1.5 sm:space-y-2">
-                      <li>地域共創イベント「Meicon」の企画・運営</li>
-                      <li>Webサイト制作・開発（Meicon-web）</li>
+                      <li>地域共創イベント「Meicon（メイコン）」の企画・運営</li>
+                      <li>Webサイト制作・開発（Meicon-web（メイコンウェブ））</li>
                       <li>地域課題解決支援・コンサルティング</li>
                     </ul>
                   </div>
