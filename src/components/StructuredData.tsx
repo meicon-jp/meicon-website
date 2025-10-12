@@ -4,8 +4,8 @@ export default function StructuredData() {
     "@type": "Organization",
     name: "合同会社Meicon（メイコン）",
     alternateName: "合同会社Meicon（メイコン）",
-    url: "https://meicon.jp",
-    logo: "https://meicon.jp/icon.png",
+    url: "https://mei-con.jp",
+    logo: "https://mei-con.jp/icon.png",
     description:
       "名古屋で世代や立場を超えて集まり、地域課題やビジネスプランを話し合い共創する市民参加型コミュニティ「Meicon」。イベント企画とWeb制作で挑戦とつながりを生み出します。",
     address: {

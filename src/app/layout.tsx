@@ -10,7 +10,7 @@ const notoSansJP = Noto_Sans_JP({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.meicon.jp";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.mei-con.jp";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

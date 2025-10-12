@@ -4,4 +4,4 @@ Allow: /
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://meicon.jp/sitemap.xml
+Sitemap: https://www.mei-con.jp/sitemap.xml
