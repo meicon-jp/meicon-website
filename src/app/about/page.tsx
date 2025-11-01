@@ -57,7 +57,7 @@ export default function About() {
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-bold text-slate-800 mb-1.5 sm:mb-2">代表者</h3>
+                    <h3 className="text-base sm:text-lg font-bold text-slate-800 mb-1.5 sm:mb-2">代表</h3>
                     <p className="text-sm sm:text-base text-gray-600">寺崎充来</p>
                     <p className="text-sm sm:text-base text-gray-600">芝田悠悟</p>
                   </div>
