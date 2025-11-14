@@ -53,25 +53,46 @@ export default async function NewsPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gray-900 text-white py-16 sm:py-20 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">News</h1>
-            <p className="text-base sm:text-lg md:text-xl text-blue-100">お知らせ・最新情報</p>
+      {/* Hero Section - モダンヒーロー */}
+      <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+        {/* 背景エフェクト */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 pt-28 text-center">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 rounded-full mb-8">
+            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+            <span className="text-purple-400 text-sm font-semibold">Latest News & Updates</span>
           </div>
+
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter">
+            <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-300 bg-clip-text text-transparent">
+              News
+            </span>
+          </h1>
+
+          <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-8">
+            お知らせ・最新情報
+          </p>
         </div>
       </section>
 
-      {/* News List */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6 px-4">
-                最新のお知らせ
-              </h2>
-            </div>
+      {/* News List - モダンカードレイアウト */}
+      <section className="py-20 sm:py-24 md:py-32 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
+        {/* 背景装飾 */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection className="text-center mb-16 sm:mb-20">
+            <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-4">
+              Latest Updates
+            </span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight">
+              最新の<span className="text-purple-600">お知らせ</span>
+            </h2>
           </AnimatedSection>
 
           {newsItems.length === 0 ? (
@@ -91,45 +112,44 @@ export default async function NewsPage() {
               </div>
             </AnimatedSection>
           ) : (
-            <div className="space-y-5 sm:space-y-6 md:space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               {newsItems.map((item) => (
                 <AnimatedSection key={item.id}>
                   <Link href={`/news/${item.id}`}>
-                    <article className="bg-gray-50 rounded-xl p-5 sm:p-6 md:p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
-                      <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-                          <span className="text-xs sm:text-sm text-gray-600 min-w-[90px] sm:min-w-[100px]">
+                    <article className="group relative bg-white border-2 border-purple-200 rounded-3xl p-6 sm:p-8 md:p-10 hover:border-purple-300 hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+
+                      <div className="relative z-10">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
+                          <span className="text-sm text-slate-500 font-semibold">
                             {formatDate(item.publishedAt)}
                           </span>
                           <span
-                            className={`px-2 sm:px-3 py-1 rounded-full text-white text-xs font-medium ${getCategoryColor(
+                            className={`inline-block px-4 py-1.5 rounded-full text-white text-xs font-bold ${getCategoryColor(
                               item.category
                             )}`}
                           >
                             {item.category}
                           </span>
                         </div>
-                      </div>
 
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 mb-3 sm:mb-4 hover:text-blue-600 transition-colors">
-                        {item.title}
-                      </h3>
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 mb-4 group-hover:text-purple-600 transition-colors">
+                          {item.title}
+                        </h3>
 
-                      <div
-                        className="prose prose-slate max-w-none text-sm sm:text-base text-gray-700 line-clamp-3"
-                        dangerouslySetInnerHTML={{ __html: item.content }}
-                      />
+                        <div
+                          className="prose prose-slate max-w-none text-base text-slate-600 line-clamp-3 leading-relaxed mb-6"
+                          dangerouslySetInnerHTML={{ __html: item.content }}
+                        />
 
-                      <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200 flex items-center justify-between">
-                        <span className="text-xs sm:text-sm text-gray-500">
-                          公開日: {formatDate(item.publishedAt)}
-                        </span>
-                        <span className="text-sm sm:text-base text-blue-600 font-medium flex items-center">
-                          詳細を見る
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </span>
+                        <div className="flex items-center justify-end">
+                          <span className="text-purple-600 font-bold flex items-center group-hover:translate-x-2 transition-transform duration-300">
+                            詳細を見る
+                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     </article>
                   </Link>

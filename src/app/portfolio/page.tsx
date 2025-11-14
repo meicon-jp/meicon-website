@@ -43,39 +43,46 @@ export default async function PortfolioPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gray-900 text-white py-16 sm:py-20 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4">Portfolio</h1>
-            <p className="text-base sm:text-lg md:text-xl text-blue-100">実績・事例</p>
+      {/* Hero Section - モダンヒーロー */}
+      <section className="relative min-h-[60vh] flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+        {/* 背景エフェクト */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 pt-28 text-center">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500/10 to-emerald-500/10 border border-blue-500/20 rounded-full mb-8">
+            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+            <span className="text-blue-400 text-sm font-semibold">Portfolio & Case Studies</span>
           </div>
+
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tighter">
+            <span className="bg-gradient-to-r from-blue-400 via-emerald-400 to-blue-300 bg-clip-text text-transparent">
+              Portfolio
+            </span>
+          </h1>
+
+          <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-8">
+            これまでの実績・事例
+          </p>
         </div>
       </section>
 
-      {/* Overview */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6 px-4">
-              これまでの実績
-            </h2>
-          </AnimatedSection>
-        </div>
-      </section>
+      {/* Event Portfolio - モダンレイアウト */}
+      <section className="py-20 sm:py-24 md:py-32 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
+        {/* 背景装飾 */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
 
-      {/* Event Portfolio */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <div className="flex items-center justify-center mb-3 sm:mb-4">
-                <Calendar className="text-blue-600 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mr-2 sm:mr-3" />
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800">
-                  イベント企画・運営 実績
-                </h2>
-              </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection className="text-center mb-16 sm:mb-20">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg mb-6">
+              <Calendar className="text-white w-8 h-8" />
             </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight">
+              イベント企画・運営 <span className="text-blue-600">実績</span>
+            </h2>
           </AnimatedSection>
 
           {eventItems.length === 0 ? (
@@ -93,30 +100,34 @@ export default async function PortfolioPage() {
               </div>
             </AnimatedSection>
           ) : (
-            <div className="space-y-8 sm:space-y-10 md:space-y-12">
+            <div className="space-y-6 sm:space-y-8">
               {eventItems.map((item) => (
                 <AnimatedSection key={item.id}>
                   <Link href={`/portfolio/${item.id}`}>
-                    <div className="bg-white rounded-xl p-5 sm:p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 mb-3 sm:mb-4">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
-                          {item.title}
-                        </h3>
-                        <span className="text-xs sm:text-sm text-gray-500">{formatDate(item.date)}</span>
-                      </div>
-                      {item.client && (
-                        <p className="text-xs sm:text-sm text-gray-600 mb-2">クライアント: {item.client}</p>
-                      )}
-                      <div
-                        className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed line-clamp-3"
-                        dangerouslySetInnerHTML={{ __html: item.description }}
-                      />
-                      <div className="flex justify-end">
-                        <div className="flex items-center text-sm sm:text-base text-blue-600 font-medium">
-                          詳細を見る
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
+                    <div className="group relative bg-white border-2 border-blue-200 rounded-3xl p-6 sm:p-8 md:p-10 hover:border-blue-300 hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+
+                      <div className="relative z-10">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-4 sm:mb-5">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 group-hover:text-blue-600 transition-colors">
+                            {item.title}
+                          </h3>
+                          <span className="text-sm text-slate-500 font-semibold">{formatDate(item.date)}</span>
+                        </div>
+                        {item.client && (
+                          <p className="text-sm text-blue-600 font-semibold mb-3">クライアント: {item.client}</p>
+                        )}
+                        <div
+                          className="text-base text-slate-600 mb-5 leading-relaxed line-clamp-3"
+                          dangerouslySetInnerHTML={{ __html: item.description }}
+                        />
+                        <div className="flex justify-end">
+                          <div className="flex items-center text-blue-600 font-bold group-hover:translate-x-2 transition-transform duration-300">
+                            詳細を見る
+                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -128,18 +139,19 @@ export default async function PortfolioPage() {
         </div>
       </section>
 
-      {/* Web Portfolio */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <div className="flex items-center justify-center mb-3 sm:mb-4">
-                <Monitor className="text-green-600 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mr-2 sm:mr-3" />
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800">
-                  Web制作 実績
-                </h2>
-              </div>
+      {/* Web Portfolio - モダンレイアウト */}
+      <section className="py-20 sm:py-24 md:py-32 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
+        {/* 背景装飾 */}
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <AnimatedSection className="text-center mb-16 sm:mb-20">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl shadow-lg mb-6">
+              <Monitor className="text-white w-8 h-8" />
             </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight">
+              Web制作 <span className="text-emerald-600">実績</span>
+            </h2>
           </AnimatedSection>
 
           {webItems.length === 0 ? (
@@ -157,30 +169,34 @@ export default async function PortfolioPage() {
               </div>
             </AnimatedSection>
           ) : (
-            <div className="space-y-8 sm:space-y-10 md:space-y-12">
+            <div className="space-y-6 sm:space-y-8">
               {webItems.map((item) => (
                 <AnimatedSection key={item.id}>
                   <Link href={`/portfolio/${item.id}`}>
-                    <div className="bg-gray-50 rounded-xl p-5 sm:p-6 md:p-8 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 mb-3 sm:mb-4">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-800 hover:text-blue-600 transition-colors">
-                          {item.title}
-                        </h3>
-                        <span className="text-xs sm:text-sm text-gray-500">{formatDate(item.date)}</span>
-                      </div>
-                      {item.client && (
-                        <p className="text-xs sm:text-sm text-gray-600 mb-2">クライアント: {item.client}</p>
-                      )}
-                      <div
-                        className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed line-clamp-3"
-                        dangerouslySetInnerHTML={{ __html: item.description }}
-                      />
-                      <div className="flex justify-end">
-                        <div className="flex items-center text-sm sm:text-base text-blue-600 font-medium">
-                          詳細を見る
-                          <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
+                    <div className="group relative bg-white border-2 border-emerald-200 rounded-3xl p-6 sm:p-8 md:p-10 hover:border-emerald-300 hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
+
+                      <div className="relative z-10">
+                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4 mb-4 sm:mb-5">
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 group-hover:text-emerald-600 transition-colors">
+                            {item.title}
+                          </h3>
+                          <span className="text-sm text-slate-500 font-semibold">{formatDate(item.date)}</span>
+                        </div>
+                        {item.client && (
+                          <p className="text-sm text-emerald-600 font-semibold mb-3">クライアント: {item.client}</p>
+                        )}
+                        <div
+                          className="text-base text-slate-600 mb-5 leading-relaxed line-clamp-3"
+                          dangerouslySetInnerHTML={{ __html: item.description }}
+                        />
+                        <div className="flex justify-end">
+                          <div className="flex items-center text-emerald-600 font-bold group-hover:translate-x-2 transition-transform duration-300">
+                            詳細を見る
+                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -1,5 +1,7 @@
 import { client, News as NewsType, MicroCMSListResponse } from '@/lib/microcms'
 import Link from 'next/link'
+import AnimatedSection from './AnimatedSection'
+import { Calendar, Tag, ArrowRight, Newspaper } from 'lucide-react'
 
 async function getNews(): Promise<NewsType[]> {
   try {
@@ -23,13 +25,26 @@ export default async function News() {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case 'イベント':
-        return 'bg-blue-600'
+        return 'from-blue-500 to-blue-600'
       case 'お知らせ':
-        return 'bg-green-600'
+        return 'from-emerald-500 to-emerald-600'
       case 'メディア掲載':
-        return 'bg-purple-600'
+        return 'from-purple-500 to-purple-600'
       default:
-        return 'bg-gray-600'
+        return 'from-slate-500 to-slate-600'
+    }
+  }
+
+  const getCategoryBorderColor = (category: string) => {
+    switch (category) {
+      case 'イベント':
+        return 'border-blue-200 hover:border-blue-400'
+      case 'お知らせ':
+        return 'border-emerald-200 hover:border-emerald-400'
+      case 'メディア掲載':
+        return 'border-purple-200 hover:border-purple-400'
+      default:
+        return 'border-slate-200 hover:border-slate-400'
     }
   }
 
@@ -43,62 +58,86 @@ export default async function News() {
   }
 
   return (
-    <section id="news" className="py-12 sm:py-16 md:py-20 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-            お知らせ
+    <section id="news" className="py-24 sm:py-32 md:py-40 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <AnimatedSection className="text-center mb-16 sm:mb-20">
+          <span className="inline-block px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-bold mb-6">
+            LATEST NEWS
+          </span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
+            最新<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">お知らせ</span>
           </h2>
-        </div>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            イベント情報や最新ニュースをお届けします
+          </p>
+        </AnimatedSection>
 
         {newsItems.length === 0 ? (
-          <div className="text-center py-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gray-100 mb-4">
-              <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-              </svg>
+          <AnimatedSection>
+            <div className="bg-white border-2 border-slate-200 rounded-3xl p-16 text-center">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-slate-100 mb-6">
+                <Newspaper className="w-10 h-10 text-slate-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">まだ投稿がありません</h3>
+              <p className="text-slate-600">
+                近日中に最新のニュースを公開予定です。お楽しみに！
+              </p>
             </div>
-            <p className="text-sm sm:text-base text-gray-600 mb-6">
-              まだ投稿がありません
-            </p>
-          </div>
+          </AnimatedSection>
         ) : (
           <>
-            <div className="space-y-4 sm:space-y-6">
-              {newsItems.map((item) => (
-                <Link key={item.id} href={`/news/${item.id}`}>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 p-4 sm:p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors duration-300 cursor-pointer">
-                    <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
-                      <span className="text-xs sm:text-sm text-gray-600 min-w-[80px] sm:min-w-[100px]">
-                        {formatDate(item.publishedAt)}
-                      </span>
-                      <span
-                        className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-white text-xs font-medium ${getCategoryColor(
-                          item.category
-                        )}`}
-                      >
-                        {item.category}
-                      </span>
+            <div className="space-y-4 sm:space-y-6 mb-12">
+              {newsItems.map((item, index) => (
+                <AnimatedSection key={item.id}>
+                  <Link href={`/news/${item.id}`}>
+                    <div className={`group bg-white border-2 ${getCategoryBorderColor(item.category)} rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-xl cursor-pointer`}>
+                      <div className="flex flex-col lg:flex-row lg:items-center gap-4 sm:gap-6">
+                        {/* Date and Category */}
+                        <div className="flex items-center gap-4 flex-shrink-0">
+                          <div className="flex items-center space-x-2 text-slate-600 min-w-[120px]">
+                            <Calendar className="w-4 h-4" />
+                            <span className="text-sm font-semibold">
+                              {formatDate(item.publishedAt)}
+                            </span>
+                          </div>
+                          <div className={`px-4 py-1.5 bg-gradient-to-r ${getCategoryColor(item.category)} text-white rounded-full text-xs font-black shadow-md flex items-center space-x-1.5`}>
+                            <Tag className="w-3 h-3" />
+                            <span>{item.category}</span>
+                          </div>
+                        </div>
+
+                        {/* Title */}
+                        <div className="flex-1">
+                          <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-relaxed">
+                            {item.title}
+                          </h3>
+                        </div>
+
+                        {/* Arrow */}
+                        <div className="hidden lg:block flex-shrink-0">
+                          <div className="w-10 h-10 bg-slate-100 group-hover:bg-blue-600 rounded-full flex items-center justify-center transition-all duration-300">
+                            <ArrowRight className="w-5 h-5 text-slate-600 group-hover:text-white group-hover:translate-x-1 transition-all" />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <span className="text-sm sm:text-base text-slate-800 font-medium hover:text-blue-600 transition-colors">
-                      {item.title}
-                    </span>
-                  </div>
-                </Link>
+                  </Link>
+                </AnimatedSection>
               ))}
             </div>
 
-            <div className="text-center mt-10 sm:mt-12">
+            <AnimatedSection className="text-center">
               <Link
                 href="/news"
-                className="inline-flex items-center px-5 sm:px-6 py-2.5 sm:py-3 bg-blue-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+                className="inline-flex items-center px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg font-black rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
                 すべてのお知らせを見る
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <ArrowRight className="ml-2 w-6 h-6" />
               </Link>
-            </div>
+            </AnimatedSection>
           </>
         )}
       </div>
