@@ -34,7 +34,7 @@ export default function Home() {
           <AnimatedSection>
             <div className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full mb-8 backdrop-blur-sm">
               <Sparkles className="w-4 h-4 text-blue-400" />
-              <span className="text-blue-400 text-sm font-bold tracking-wider">NAGOYA'S CO-CREATION PLATFORM</span>
+              <span className="text-blue-400 text-sm font-bold tracking-wider">NAGOYA&apos;S CO-CREATION PLATFORM</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 leading-[1.1] tracking-tighter">
@@ -138,7 +138,7 @@ export default function Home() {
             </div>
             <div className="mb-6">
               <span className="inline-block px-6 py-3 bg-blue-100 text-blue-700 text-sm font-black border-2 border-blue-200 rounded-full">
-                MEICON'S SOLUTION
+                MEICON&apos;S SOLUTION
               </span>
             </div>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-8 tracking-tight">
