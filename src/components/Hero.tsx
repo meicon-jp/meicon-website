@@ -7,13 +7,13 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/nagoya.jpg"
-          alt="名古屋の街並み"
+          src="https://placehold.co/1920x1080/a0c4ff/ffffff?text=Aerial+Scenery+1"
+          alt="空撮風景1"
           fill
           className="object-cover animate-slow-zoom"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-900/70 to-slate-800/80 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br z-10"></div>
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] z-10"></div>
       </div>
 

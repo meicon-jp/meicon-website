@@ -72,7 +72,7 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body className={`${notoSansJP.className} antialiased bg-gray-50 text-slate-800`}>
+      <body className={`${notoSansJP.className} antialiased bg-black text-white`}>
         <Header />
         {children}
         <Footer />
