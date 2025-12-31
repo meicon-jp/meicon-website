@@ -132,7 +132,7 @@ export default function About() {
                 <Users className="w-5 h-5 text-gray-400 mr-3" />
                 <h3 className="text-sm text-gray-400">代表者</h3>
               </div>
-              <p className="text-white">寺崎充来 / 芝田悠悟</p>
+              <p className="text-white">寺崎充来</p>
             </div>
 
             <div className="border border-gray-800 p-6">
